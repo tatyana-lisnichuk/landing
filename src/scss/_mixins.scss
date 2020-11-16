@@ -1,0 +1,95 @@
+
+@import "variables";
+@mixin flexible {
+display: flex;
+justify-content: center;
+align-items: center;
+margin: auto;
+text-align: center;
+}
+@mixin flex-col-center {
+  flex-direction: column;
+  margin: auto;
+  
+}
+@mixin bcg-settings {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  max-width: $full-screen;
+  overflow: hidden;
+}
+@mixin centr-container {
+  // max-width: 62.7%;
+  max-width:69.375em;
+   margin: 0 auto;
+   height: 100%;
+}
+@mixin reset-indents {
+   margin:0;
+   padding: 0;
+  
+}
+ @mixin base-button {
+  text-transform: uppercase;
+  font-size: 1em;//16px
+  letter-spacing: 0.075em;
+  outline: none;
+  background-color:$btn-color;
+  color: $main-color;
+  border:$btn-color solid 1px;
+  font-family: $element-font;
+  padding: 24px 36px;
+  margin:0px 2px;
+  transition: 0.2s ease-in-out;
+  max-width: 225px;
+ 
+  }
+@mixin element-font-14 {
+  font-family: $element-font;
+  font-size: 0.875em; //14px
+}
+@mixin main-font-20-white {
+  font-family: $main-font;
+  font-size: 1.25em; //20px
+  color: $main-color;
+  // font-weight: 700;
+}
+@mixin img-cover{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+@mixin h2-title{
+  color: $main-color;
+  text-transform: capitalize;
+  font-family:$element-font;
+  font-size:2.25em ;//36px
+  font-weight: 400;
+  text-align: left;
+
+}
+@mixin descr-text {
+    color: $description-color;
+    font-family: $main-font;
+    font-size: 1em;//16px
+    line-height: 26px;
+    text-align: left;
+
+}
+@mixin shape-item-wrap {
+     max-width: 220px;
+     @include flexible;
+     flex-direction: column;
+     position: absolute;
+     bottom:0;
+}
+@mixin shape-item {
+       width:3.75em; //60px
+       height: 3.625em; //58px
+       background-color: #333333;
+       border-radius: 50%;
+       box-shadow:0 0 0 0.5em #333333;
+       
+  
+}

@@ -1,0 +1,752 @@
+@import "variables";
+@import "mixins";
+@import "adaptive-style";
+* {
+  box-sizing: border-box;
+}
+body{
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      li{
+        padding-left: 0;
+        margin: 0;
+      }
+    }
+    a{
+      text-decoration: none;
+      color: currentColor;
+      cursor: pointer;
+      color: $main-color;
+    }
+  font-size: 1em;
+  /* скрываем чебокс для гам-меню */
+  #menu__toggle {
+    opacity: 0;
+    position: absolute;
+    right: 9999;}
+  .base-button {
+    @include base-button;
+    // margin: 50px 0 50px 0;
+  }
+  .base-button:hover{
+    opacity:0.8;
+  }
+  .card {
+    padding: 2.81em 1.87em;
+    // min-height: 375px;
+    background-color: $bcg-card-color;
+    opacity: 0.9;
+    &__content {
+      text-align: left;
+      &-before-title {
+        @include main-font-20-white;
+      }
+      &-title {
+        @include main-font-20-white;
+        text-transform: uppercase;
+      }
+      &-description {
+        @include descr-text;
+       
+      }
+    }
+  }
+}
+.site-wrapper {
+  max-width: $full-screen;
+  padding: 0.94em;
+  margin: auto;
+.container {
+  height: 100%;
+  @include centr-container;
+}
+// BHROMAON
+  .bhromaon {
+    background: url(../../img/hero-img1.jpg);
+    min-height: 48em;
+    @include bcg-settings;
+    @include flexible;
+    @include flex-col-center;
+    padding-top: 5%;
+  .content {
+    max-width: 40.75em;//652px;
+    color: $main-color;
+    @include flexible;
+    @include flex-col-center;
+    width: 100%;
+    &__h1 {
+      font-family: $main-font;
+      font-weight: 700;
+      font-size: 3em;
+      line-height: 1.625em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      @include reset-indents;
+      // margin: 1.125em;
+      }
+      &__after-h1-title {
+        text-transform: capitalize;
+        letter-spacing: 0.31em;
+        font-size: 1.375em;
+        @include reset-indents;
+      }
+    .form {
+      @include flexible;
+      background-color: #fff;
+      max-width: 40.625em;
+      width: 100%;
+      margin: 2.81em auto 5em auto;
+      &__mail {
+        @include reset-indents;
+        @include element-font-14;
+        color: $input-color;
+        border: none;
+        margin: 1.56em auto;
+        text-transform: capitalize;
+        outline: none;
+        letter-spacing: 0.2em;
+        line-height:1.31em ;
+        max-width: 77.7%;
+        width: 100%;
+        text-align: center;
+        border-radius: 0;
+      }
+        &__btn {
+          @include base-button;
+          background-image: url(./../../svg/search.svg);
+          background-repeat: no-repeat;
+          background-position-x: 93%;
+          background-position-y:center;
+          max-width: 22.3%;
+          width: 100%;
+          cursor: pointer;
+          font-size: 0.875em;
+          letter-spacing: 0.1em;
+          padding: 1.375em 3.12em 1.25em 2.187em;
+        }
+      .form__btn:hover {
+        opacity:0.8;
+      }
+    }
+
+    .scroll {
+      &__title{
+          @include reset-indents;
+          @include element-font-14;
+          letter-spacing: 0.2em;
+          line-height: 1.625em;
+          margin-top: 1.2em;
+      }
+    }
+    }
+    //   end of the "content" style//
+  }
+  //   end of the "bhromaon" style//
+  // MENU
+  .menu {
+    background-color: #5474fd;
+    width:100%;
+    min-height: 100%;
+    position: sticky;
+    padding: 1.875em auto;
+    top:0;
+    z-index: 99999;
+
+    &__wrapper {
+      @include flexible;
+      justify-content: space-between;
+      min-height: 5em;
+      .logo {
+        text-transform: uppercase;
+        font-size: 1.5em; //24px
+        letter-spacing: 0.1em;
+        font-family: $main-font;
+        transition: all 0.2s ease-in-out;
+      }
+      .logo :hover {
+       color:$hover-color;
+       }
+      
+    }
+    .navbar {
+        @include flexible;
+        gap: 2.8em; // 45px
+     
+        &__link{
+          @include element-font-14;
+          text-transform: uppercase;
+          transition: all 0.2s ease-in-out;
+          // position: sticky;
+          // top:0;
+          // z-index: 99999;
+        }
+        &__link:hover {
+          color:$hover-color;
+        }
+      }
+  }
+  .choose {
+    background: url(../../img/choose.jpg);
+    min-height: 43em;
+    @include bcg-settings;
+    @include flexible;
+    @include flex-col-center;
+    &__grid{
+      @include flexible;
+      gap:1.875em;//30px
+      // background-color: darkorange;
+      margin: 10% auto;
+      &-item{
+        width: 50%;
+        min-height: 450px;
+        // background-color: darkgreen;
+        position: relative;
+        &-img-top {
+          max-width: 355px;
+          max-height: 225px;
+          // margin: 0 auto;
+          position: absolute;
+          top: 0;
+          left: 65px;
+          //  width: 100%;
+          //  overflow: hidden;
+          width: 100%;
+           &-photo {
+           @include img-cover;}
+        }
+
+         &-img-bottom {
+           max-width: 355px;
+           max-height: 225px;
+           position: absolute;
+           right: 0px;
+           bottom: 0;
+           &-photo {
+             @include img-cover;
+           }
+         }
+       
+      
+        &-h2{
+          @include h2-title;
+           @include reset-indents;
+           margin: 2em auto;
+        }
+        &__description{
+        @include descr-text;
+        letter-spacing: 0.1em;
+        @include reset-indents;
+        margin:1.625em auto;// auto  auto;
+        }
+       
+      }
+    }
+  }
+  //   end of the choose style//
+  .choose-footer {
+    background-color: #333333;
+    min-height: 155px;
+     
+    &__wrapper {
+     .shape {
+       @include flexible;
+       margin: 0 auto;
+       max-width: 985px;
+       position: relative;
+       padding-top: 45px;
+       padding-bottom: 120px;
+       &__bcg {
+         overflow: hidden;
+       }
+       &__left-item-wrapper{
+         @include shape-item-wrap;
+            left: 0;
+       }
+        &__center-item-wrapper {
+          @include shape-item-wrap;
+          left: calc(50%-1em);
+        }
+         &__right-item-wrapper {
+           @include shape-item-wrap;
+           right:0;
+         }
+        &__item-title {
+          font-family: $element-font;
+          color: $main-color;
+          font-size: 2.25em;
+        
+        }
+        &__item-left {
+          @include shape-item;
+          
+
+          &-img {
+            @include img-cover;
+            fill: #5474fd;
+          }
+
+        }
+        &__item-center {
+          @include shape-item;
+          left: calc(50%-1em);
+
+          &-img {
+            @include img-cover;
+            fill: #e75d5d;
+          }
+
+        }
+        &__item-right {
+          @include shape-item;
+          right: 0;
+
+          &-img {
+            @include img-cover;
+            fill: #00a2ff;
+          }
+        }
+      }
+    }
+  }
+  //spain top style
+  .spain-grid {
+    @include flexible;
+    gap: 30px;
+
+    &__item-left {
+      max-width:48%;
+      height: 100%;
+      @include flexible;
+      // justify-content: left;
+      margin-right: auto;
+      margin-left: 0;
+     
+    }
+    &__item-right {
+      max-width:48%;
+      height: 100%;
+      @include flexible;
+      justify-content: right;
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+  .spain-top {
+  background: url(../../img/spain-top.jpg);
+  min-height: 740px;
+  @include bcg-settings;
+  // width: $full-screen;
+  @include flexible;
+      
+}
+  //   end of the spain-top style//
+ 
+  .spain-bottom {
+    background: url(../../img/spain-bottom.jpg);
+    min-height: 705px;
+    @include bcg-settings;
+    // width: $full-screen;
+    @include flexible;
+  }
+
+  .tourist {
+    background: url(../../img/tourist-say-hero-img.jpg);
+    @include bcg-settings;
+    min-height: 46em;
+    &__wrapper{
+      @include flexible;
+      @include flex-col-center;
+      flex-direction: column;
+      margin: 6.25em auto;
+      // justify-content: space-between;
+
+      &-title {
+        @include h2-title;
+        @include reset-indents;
+        margin: 25px auto;
+        text-align: center;
+      }
+      &-content {
+      width: 100%;
+        // width:1110px;
+        // height: 100%;
+        
+        @include flexible;
+        background-color: #333333;
+        
+        &-description{
+          width:56%;
+          // max-width: 41.56em;
+          height: 100%;
+        // max-width: 555px;
+        }
+        &-photo {
+          width:44%;
+          // max-width: 27.8em;
+          min-height: 285px;
+          height: 100%;
+          background: url(../../img/Travel-More_03.jpg) no-repeat;
+          object-fit: cover;
+          background-position: center center;
+          .ourist__wrapper-content-photo-img img{
+            @include img-cover;
+            // height: 100%;
+          }
+        }
+        &-description {
+          color: #FEFEFE;
+          background-color: #333333;
+          width: 100%;
+          height: 100%;
+          // margin: 40px 28px;
+        }
+        .quote {
+          fill: #5474fd;
+          height: 1.25em;
+          width: 1.25em;
+          float: left;
+          margin:-10px 13px 8px 0px;
+        }
+      }
+    }
+  }
+  .main-footer {
+    background-color: #232323;
+    height: 16.56em;
+    @include flexible;
+    @include flex-col-center;
+    justify-content: flex-end;
+    padding-bottom: 48px;
+    &__content {
+      text-align: center;
+      &-logo {
+        @include main-font-20-white;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      &-moto{
+        color: $main-color;
+        font-size: 16px;
+        font-family: $main-font;
+      }
+      .social {
+        display: flex;
+        gap: 1.375em;
+        justify-content: center;
+        text-align: center;
+      }
+      .fab.social__icon {
+        margin-left: 20px;
+        transition: 0.2s ease-in-out;
+      }
+      .social__icon:hover {
+        color: #5474fd;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    .container {
+      max-width: 100%;
+    }
+
+    /* гамбургер-меню */
+    // скрываем основное меню
+    .navbar>navbar__link {
+      opacity: 0;
+    }
+
+    /* стилизуем кнопку */
+    .menu__btn {
+      display: block;
+      display: flex;
+      /* используем flex для центрирования содержимого */
+      align-items: center;
+      /* центрируем содержимое кнопки */
+      position: fixed;
+      top: 2em;
+      right: 1.875em;
+      width: 2.5em;
+      height: 2.5em;
+      cursor: pointer;
+      z-index: 150;
+    }
+
+    /* добавляем "гамбургер" */
+    .menu__btn>span,
+    .menu__btn>span::before,
+    .menu__btn>span::after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 0.125em;
+      background-color: #999999;
+    }
+
+    .menu__btn>span::before {
+      content: "";
+      top: -0.5em;
+    }
+
+    .menu__btn>span::after {
+      content: "";
+      top: 0.5em;
+    }
+
+    /* контейнер меню */
+    .navbar {
+      // display: block;
+      flex-direction: column;
+      position: fixed;
+      visibility: hidden;
+      top: 0;
+      left: 1em;
+      width: 16em;
+      margin: 0;
+      padding: 2em 0;
+      text-align: center;
+      background-color: #5474fd;
+    }
+
+    /* элементы меню */
+    .navbar__link {
+      padding: 1em 1.5em;
+    }
+
+    .navbar__link:hover {
+      background-color: #cfd8dc;
+    }
+
+    #menu__toggle:checked~.menu__btn>span {
+      transform: rotate(45deg);
+    }
+
+    #menu__toggle:checked~.menu__btn>span::before {
+      top: 0;
+      transform: rotate(0);
+    }
+
+    #menu__toggle:checked~.menu__btn>span::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+
+    #menu__toggle:checked~.navbar {
+      visibility: visible;
+      overflow: hidden;
+    }
+  }
+
+  .form {
+    flex-direction: column;
+    max-width: 100%;
+    position: relative;
+
+    &__btn {
+      max-width: 80%;
+      position: absolute;
+      top: 5em;
+    }
+  }
+
+  //  "form" end
+  .choose {
+    &__grid {
+      flex-direction: column;
+      margin: 0;
+
+      &-item {
+
+        position: unset;
+        max-width: 100%;
+        width: 100%;
+
+        &-h2 {
+          @include h2-title;
+          @include reset-indents;
+          margin: 2em auto;
+        }
+
+        &__description {
+          @include descr-text;
+          letter-spacing: 0.1em;
+          @include reset-indents;
+          margin: 1.625em auto; // auto  auto;
+        }
+
+        &-img-top {
+          max-width: 355px;
+          max-height: 225px;
+
+          position: unset;
+          top: 0;
+          left: 0px;
+
+          width: 100%;
+
+          &-photo {
+            @include img-cover;
+          }
+        }
+      }
+    }
+  }
+
+  .choose-footer {
+    background-color: #333333;
+    min-height: 155px;
+
+    &__wrapper {
+
+      .shape {
+        // @include flexible;
+        // margin: 0 auto;
+        max-width: 100%;
+        // position: relative;
+        // padding-top: 45px;
+        // padding-bottom: 120px;
+        height: 100%;
+
+        //  display: none;
+
+        &__bcg {
+          overflow: hidden;
+          display: none;
+        }
+
+        &__left-item-wrapper {
+          // @include shape-item-wrap;
+          // left: 0;
+          max-width: 220px;
+          //  @include flexible;
+          flex-direction: column;
+          position: unset;
+          //  bottom:0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: auto;
+          text-align: center;
+        }
+
+        &__center-item-wrapper {
+          @include shape-item-wrap;
+          left: calc(50%-1em);
+        }
+
+        &__right-item-wrapper {
+          @include shape-item-wrap;
+          right: 0;
+        }
+
+        &__item-title {
+          font-family: $element-font;
+          color: $main-color;
+          font-size: 1.5em;
+
+        }
+
+        &__item-left {
+          @include shape-item;
+
+          &-img {
+            @include img-cover;
+            fill: #5474fd;
+          }
+        }
+
+        &__item-center {
+          @include shape-item;
+          left: calc(50%-1em);
+
+          &-img {
+            @include img-cover;
+            fill: #e75d5d;
+          }
+        }
+
+        &__item-right {
+          @include shape-item;
+          right: 0;
+
+          &-img {
+            @include img-cover;
+            fill: #00a2ff;
+          }
+        }
+      }
+    }
+
+    .tourist {
+      // background: url(../../img/tourist-say-hero-img.jpg);
+      // @include bcg-settings;
+      // min-height: 46em;
+
+      &__wrapper {
+        @include flexible;
+        @include flex-col-center;
+        flex-direction: column;
+        margin: 6.25em auto;
+        // justify-content: space-between;
+
+        &-title {
+          @include h2-title;
+          @include reset-indents;
+          margin: 25px auto;
+          text-align: center;
+        }
+
+        &-content {
+          width: 100%;
+
+
+          // @include flexible;
+          // background-color: #333333;
+          flex-direction: column;
+
+          &-description {
+            width: 100%;
+            // max-width: 41.56em;
+            // height: 100%;
+            // max-width: 555px;
+          }
+
+          &-photo {
+            width: 100%;
+            // max-width: 27.8em;
+            min-height: 285px;
+            height: 100%;
+            background: url(../../img/Travel-More_03.jpg) no-repeat;
+            object-fit: cover;
+            background-position: center center;
+
+            .ourist__wrapper-content-photo-img img {
+              @include img-cover;
+              // height: 100%;
+            }
+          }
+
+          &-description {
+            color: #FEFEFE;
+            background-color: #333333;
+            width: 100%;
+            height: 100%;
+            // margin: 40px 28px;
+          }
+
+          .quote {
+            fill: #5474fd;
+            height: 1.25em;
+            width: 1.25em;
+            float: left;
+            margin: -10px 13px 8px 0px;
+          }
+        }
+      }
+    }
+  }
+}
+//   end of the .site-wrapper style//
